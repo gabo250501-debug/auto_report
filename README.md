@@ -2,6 +2,14 @@
 
 Este proyecto es un sistema de automatización en Python diseñado para convertir datos crudos industriales (archivos CSV o Excel) en **reportes ejecutivos en formato PDF**. Permite analizar métricas clave como el consumo eléctrico, horas operativas y fallas detectadas en diversos equipos, presentando la información en tablas estructuradas y visualizaciones gráficas de alta calidad.
 
+## 🏭 Contexto y Problemática
+
+En entornos industriales, el seguimiento del rendimiento de equipos se realiza frecuentemente de forma manual: técnicos exportan datos de sistemas como SAP PM, los copian en Excel y construyen tablas y gráficos a mano. Este proceso puede tomar horas, es propenso a errores humanos y dificulta la toma de decisiones oportuna.
+
+## ✅ Solución
+
+Este sistema automatiza completamente ese flujo. Con un par de clics, cualquier técnico o supervisor puede convertir un archivo de datos en un reporte ejecutivo profesional listo para presentar, en segundos y sin conocimientos de programación.
+
 ## 🚀 Funciones y Características
 
 - **Interfaz Gráfica Amigable:** Incluye una interfaz de usuario (GUI) desarrollada con `tkinter` que permite a cualquier usuario, incluso sin conocimientos de programación, seleccionar archivos y generar reportes con un par de clics.
