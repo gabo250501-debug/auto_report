@@ -1,18 +1,24 @@
-# Entornos virtuales
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
 .venv/
 env/
 venv/
 ENV/
 
-# Python cache
-__pycache__/
-*.py[cod]
-*$py.class
+# Entorno de pruebas
+.pytest_cache/
+.coverage
+htmlcov/
 
-# Archivos generados temporalmente o como output
+# Archivos de Datos y Reportes (Generados)
+datos_proyecto.csv
 Reporte_Ejecutivo.pdf
 grafico_consumo.png
+*.log
 
-# SO
-.DS_Store
-Thumbs.db
+# IDEs
+.vscode/
+.idea/
+*.swp

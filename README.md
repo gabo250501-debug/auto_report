@@ -1,4 +1,4 @@
-# Generador Automático de Reportes (Auto Report)
+# Generador Automático de Reportes (Auto Report) - v2.0
 
 Este proyecto es un sistema de automatización en Python diseñado para convertir datos crudos industriales (archivos CSV o Excel) en **reportes ejecutivos en formato PDF**. Permite analizar métricas clave como el consumo eléctrico, horas operativas y fallas detectadas en diversos equipos, presentando la información en tablas estructuradas y visualizaciones gráficas de alta calidad.
 
@@ -10,55 +10,59 @@ En entornos industriales, el seguimiento del rendimiento de equipos se realiza f
 
 Este sistema automatiza completamente ese flujo. Con un par de clics, cualquier técnico o supervisor puede convertir un archivo de datos en un reporte ejecutivo profesional listo para presentar, en segundos y sin conocimientos de programación.
 
-## 🚀 Funciones y Características
+## 🚀 Novedades de la Versión 2.0 (Mejoras 5 Estrellas)
 
-- **Interfaz Gráfica Amigable:** Incluye una interfaz de usuario (GUI) desarrollada con `tkinter` que permite a cualquier usuario, incluso sin conocimientos de programación, seleccionar archivos y generar reportes con un par de clics.
+- **Soporte Multi-Página:** Generación inteligente de tablas que se expanden automáticamente a múltiples páginas con encabezados repetidos.
+- **Robustez en Ingesta:** Detección automática de encoding (`chardet`) para evitar errores con caracteres especiales y acentos latinoamericanos.
+- **Logging Profesional:** Sistema de registro con timestamps para trazabilidad total de procesos y errores.
+- **Calidad de Código:** Implementación de **Type Hints** y **Manejo de Errores Granular**.
+- **Suite de Pruebas:** Incluye 17 tests unitarios automatizados con `pytest` para garantizar la fiabilidad de los cálculos.
+
+## 🛠️ Funciones y Características
+
+- **Interfaz Gráfica Amigable:** Incluye una interfaz de usuario (GUI) desarrollada con `tkinter` que permite a cualquier usuario seleccionar archivos y generar reportes con un par de clics.
 - **Procesamiento de Datos:** Utiliza `pandas` para leer archivos (`.csv`, `.xlsx`, `.xls`), limpiar los datos y realizar agregaciones (totales y promedios por equipo).
-- **Visualización Estadística:** Genera automáticamente gráficos de barras con `matplotlib` para visualizar el consumo de energía por equipo, utilizando un diseño limpio y moderno que evita el solapamiento de datos.
+- **Visualización Estadística:** Genera automáticamente gráficos de barras con `matplotlib` para visualizar el consumo de energía por equipo, utilizando un diseño limpio y moderno.
 - **Reportes Ejecutivos en PDF:** Compila la información procesada y los gráficos en un documento PDF profesional utilizando `fpdf2`, con encabezados, tablas con diseño "cebra" y paginación.
-- **Generador de Datos de Prueba:** Incluye un script secundario para simular datos industriales y facilitar las pruebas del sistema sin necesidad de contar con datos reales.
+- **Generador de Datos de Prueba:** Incluye un script secundario para simular datos industriales y facilitar las pruebas del sistema.
+
+## 🧪 Pruebas Unitarias
+
+Para verificar la integridad del sistema y los cálculos de KPIs:
+```bash
+pytest tests/ -v
+```
 
 ## 📂 Estructura del Proyecto
 
 - `app.py`: Archivo principal que ejecuta la interfaz gráfica (GUI) de la aplicación.
-- `generar_reporte.py`: Módulo principal que contiene la lógica de procesamiento de datos, creación del gráfico y compilación del archivo PDF.
-- `generador_datos.py`: Script para generar el archivo `datos_proyecto.csv` con datos aleatorios simulados de equipos industriales.
-- `requirements.txt`: Lista de dependencias y librerías de Python necesarias para ejecutar el proyecto.
-- `datos_proyecto.csv`: (Generado) Archivo de prueba con el registro diario de equipos, consumo, horas y fallas.
-- `grafico_consumo.png`: (Generado) Imagen temporal del gráfico utilizado para incrustar en el PDF.
-
-## 🛠️ Requisitos e Instalación
-
-1. Asegúrate de tener Python instalado (versión 3.8 o superior recomendada).
-2. Clona o descarga este repositorio.
-3. (Opcional) Crea y activa un entorno virtual.
-4. Instala las dependencias necesarias ejecutando:
-   ```bash
-   pip install -r requirements.txt
-   ```
+- `generar_reporte.py`: Módulo principal que contiene la lógica de procesamiento de datos y renderizado PDF.
+- `tests/`: Carpeta con la suite de pruebas unitarias automatizadas.
+- `generador_datos.py`: Script para generar el archivo `datos_proyecto.csv` con datos aleatorios simulados.
+- `requirements.txt`: Lista de dependencias y librerías de Python necesarias.
+- `PROYECTO_1_PLAN.md`: Documento detallado del plan de desarrollo y mejoras técnicas.
 
 ## 📖 Cómo Usar el Sistema
 
 1. **(Opcional) Generar datos de prueba:**
-   Si no tienes un archivo CSV/Excel propio, puedes generar uno ejecutando:
    ```bash
    python generador_datos.py
    ```
-   Esto creará un archivo llamado `datos_proyecto.csv` con simulaciones de casi dos años de operación.
 
 2. **Iniciar la Aplicación:**
-   Ejecuta el archivo de la interfaz gráfica:
    ```bash
    python app.py
    ```
 
 3. **Generar el Reporte:**
-   - En la ventana que se abre, haz clic en **"Cargar Archivo"** y selecciona tu archivo de datos (por ejemplo, el `datos_proyecto.csv` generado anteriormente).
+   - Carga tu archivo de datos (`.csv` o `.xlsx`).
    - Haz clic en **"Generar Reporte PDF"**.
-   - Elige la ubicación y el nombre con el que deseas guardar tu reporte.
-   - ¡Listo! La aplicación te notificará cuando el reporte ejecutivo haya sido creado exitosamente.
+   - Elige la ubicación y guarda tu reporte ejecutivo.
 
 ## 📝 Notas Extra
 
-- **Personalización Visual:** Si deseas cambiar los colores corporativos del reporte PDF o de los gráficos, puedes editar las variables constantes al inicio del archivo `generar_reporte.py` (ej. `COLOR_PRIMARIO`).
-- **Escalabilidad:** El script de `pandas` está preparado para manejar eficientemente grandes volúmenes de datos. Puedes agregar más columnas a tu archivo de origen, pero requerirás ajustar la función `procesar_datos()` en `generar_reporte.py` para mapearlas correctamente en el PDF final.
+- **Personalización Visual:** Puedes editar las constantes al inicio de `generar_reporte.py` (ej. `COLOR_PRIMARIO`) para cambiar la estética del reporte.
+- **Escalabilidad:** El sistema está preparado para manejar grandes volúmenes de datos eficientemente mediante `pandas`.
+
+---
+**Desarrollado como parte del Portafolio IIoT - Soluciones de Automatización Industrial.**
