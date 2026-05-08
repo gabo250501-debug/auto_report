@@ -10,7 +10,7 @@ En entornos industriales, el seguimiento del rendimiento de equipos se realiza f
 
 Este sistema automatiza completamente ese flujo. Con un par de clics, cualquier técnico o supervisor puede convertir un archivo de datos en un reporte ejecutivo profesional listo para presentar, en segundos y sin conocimientos de programación.
 
-## 🚀 Novedades de la Versión 2.0 (Mejoras 5 Estrellas)
+## 🚀 Novedades de la Versión 2.0
 
 - **Soporte Multi-Página:** Generación inteligente de tablas que se expanden automáticamente a múltiples páginas con encabezados repetidos.
 - **Robustez en Ingesta:** Detección automática de encoding (`chardet`) para evitar errores con caracteres especiales y acentos latinoamericanos.
